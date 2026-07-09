@@ -1,53 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Menu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Menu</title>
 
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- JS -->
 <script src="script.js" defer></script>
 
 <style>
-.card img { height:200px; object-fit:cover; }
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.navbar {
+    background-color: #ff4d4d !important;
+}
 </style>
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-dark bg-danger">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
 <div class="container">
-<a href="home.html" class="navbar-brand">Foodie</a>
-<a href="cart.html" class="btn btn-light">Cart 🛒</a>
+
+<a href="home.html" class="navbar-brand">🍔 Foodie</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="home.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="menu.html">Menu</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="cart.html">Cart 🛒</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="login.html">Login</a>
+</li>
+
+</ul>
+</div>
+
 </div>
 </nav>
 
+<!-- MENU -->
 <div class="container mt-4">
+
+<h2 class="text-center mb-4">Our Delicious Menu 🍽️</h2>
+
 <div class="row">
 
-<div class="col-md-4">
+<!-- Burger -->
+<div class="col-md-4 mb-4">
 <div class="card">
 <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg">
 <div class="card-body text-center">
 <h5>Burger</h5>
 <p>₹120</p>
-<button class="btn btn-danger" onclick="addToCart('Burger',120)">Add</button>
+<button class="btn btn-danger" onclick="addToCart('Burger',120)">Add to Cart</button>
 </div>
 </div>
 </div>
 
-<div class="col-md-4">
+<!-- Pizza -->
+<div class="col-md-4 mb-4">
 <div class="card">
 <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg">
 <div class="card-body text-center">
 <h5>Pizza</h5>
 <p>₹250</p>
-<button class="btn btn-danger" onclick="addToCart('Pizza',250)">Add</button>
+<button class="btn btn-danger" onclick="addToCart('Pizza',250)">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Biryani -->
+<div class="col-md-4 mb-4">
+<div class="card">
+<img src="https://images.pexels.com/photos/7394819/pexels-photo-7394819.jpeg">
+<div class="card-body text-center">
+<h5>Biryani</h5>
+<p>₹200</p>
+<button class="btn btn-danger" onclick="addToCart('Biryani',200)">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Cake -->
+<div class="col-md-4 mb-4">
+<div class="card">
+<img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg">
+<div class="card-body text-center">
+<h5>Cake</h5>
+<p>₹300</p>
+<button class="btn btn-danger" onclick="addToCart('Cake',300)">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Ice Cream -->
+<div class="col-md-4 mb-4">
+<div class="card">
+<img src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg">
+<div class="card-body text-center">
+<h5>Ice Cream</h5>
+<p>₹100</p>
+<button class="btn btn-danger" onclick="addToCart('Ice Cream',100)">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- French Fries -->
+<div class="col-md-4 mb-4">
+<div class="card">
+<img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg">
+<div class="card-body text-center">
+<h5>French Fries</h5>
+<p>₹90</p>
+<button class="btn btn-danger" onclick="addToCart('Fries',90)">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Pasta -->
+<div class="col-md-4 mb-4">
+<div class="card">
+<img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg">
+<div class="card-body text-center">
+<h5>Pasta</h5>
+<p>₹180</p>
+<button class="btn btn-danger" onclick="addToCart('Pasta',180)">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Sandwich -->
+<div class="col-md-4 mb-4">
+<div class="card">
+<img src="https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg">
+<div class="card-body text-center">
+<h5>Sandwich</h5>
+<p>₹110</p>
+<button class="btn btn-danger" onclick="addToCart('Sandwich',110)">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Donut -->
+<div class="col-md-4 mb-4">
+<div class="card">
+<img src="https://images.pexels.com/photos/298217/pexels-photo-298217.jpeg">
+<div class="card-body text-center">
+<h5>Donut</h5>
+<p>₹80</p>
+<button class="btn btn-danger" onclick="addToCart('Donut',80)">Add to Cart</button>
 </div>
 </div>
 </div>
 
 </div>
+
 </div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
