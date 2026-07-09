@@ -1,5 +1,5 @@
 FROM nginx
-MAINTAINER name Rineeth
-LABEL This is a Foobie hub app.
+LABEL maintainer="name Rineeth"
+LABEL description="This is a Foodie hub app."
 EXPOSE 80
 COPY . /usr/share/nginx/html/
