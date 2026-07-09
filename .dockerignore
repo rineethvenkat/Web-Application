@@ -1,1 +1,31 @@
+# VCS
+.git
+.gitignore
+
+# Editor folders
+.vscode/
+.idea/
+
+# Ignore docs and local markdown
 README.md
+*.md
+
+# Node / build artifacts
+node_modules/
+npm-debug.log
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker-compose / local tooling
+docker-compose*.yml
+
+# Ignore the dockerignore itself from being sent (optional)
+.dockerignore
