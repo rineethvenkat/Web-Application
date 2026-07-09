@@ -1,186 +1,163 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie Hub</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+```
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body {
+        background: #f8f9fa;
+    }
+    .navbar {
+        background: #ff6b6b;
+    }
+    .navbar-brand {
+        color: #fff !important;
+        font-weight: bold;
+    }
+    .card {
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .card img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
+    .btn-order {
+        background: #ff6b6b;
+        color: white;
+        border-radius: 20px;
+    }
+    .btn-order:hover {
+        background: #ff4757;
+    }
+    .cart-box {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        width: 260px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    #toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: none;
+    }
+</style>
+```
 
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .navbar {
-            background-color: #ff6b6b;
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
-            font-weight: bold;
-        }
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-radius: 15px;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        .card img {
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            height: 200px;
-            object-fit: cover;
-        }
-        .btn-order {
-            background-color: #ff6b6b;
-            color: white;
-            border-radius: 20px;
-        }
-        .btn-order:hover {
-            background-color: #ff4757;
-        }
-        .cart-box {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            width: 250px;
-        }
-        .cart-box h5 {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar p-3">
     <div class="container">
-        <a class="navbar-brand" href="#">🍔 Foodie Hub</a>
-        <div class="ms-auto text-white">
+        <span class="navbar-brand">🍔 Foodie Hub</span>
+        <span class="text-white">
             Cart: <span id="cart-count">0</span> | ₹<span id="total-price">0</span>
-        </div>
+        </span>
     </div>
 </nav>
 
-<!-- Food Section -->
 <div class="container mt-4">
     <div class="row">
 
-        <!-- Food Card 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://source.unsplash.com/400x300/?burger" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>Burger</h5>
-                    <p>Delicious cheesy burger</p>
-                    <h6>₹120</h6>
-                    <button class="btn btn-order add-cart" data-name="Burger" data-price="120">Add to Cart</button>
-                </div>
+```
+    <!-- Burger -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" />
+            <div class="card-body text-center">
+                <h5>Burger</h5>
+                <p>Cheesy burger</p>
+                <h6>₹120</h6>
+                <button class="btn btn-order add-cart" data-name="Burger" data-price="120">Order Now</button>
             </div>
         </div>
-
-        <!-- Food Card 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://source.unsplash.com/400x300/?pizza" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>Pizza</h5>
-                    <p>Hot cheesy pizza</p>
-                    <h6>₹250</h6>
-                    <button class="btn btn-order add-cart" data-name="Pizza" data-price="250">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Food Card 3 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://source.unsplash.com/400x300/?pasta" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>Pasta</h5>
-                    <p>Creamy white sauce pasta</p>
-                    <h6>₹180</h6>
-                    <button class="btn btn-order add-cart" data-name="Pasta" data-price="180">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Food Card 4 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://source.unsplash.com/400x300/?biryani" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>Biryani</h5>
-                    <p>Spicy chicken biryani</p>
-                    <h6>₹220</h6>
-                    <button class="btn btn-order add-cart" data-name="Biryani" data-price="220">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Food Card 5 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://source.unsplash.com/400x300/?noodles" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>Noodles</h5>
-                    <p>Hakka noodles</p>
-                    <h6>₹150</h6>
-                    <button class="btn btn-order add-cart" data-name="Noodles" data-price="150">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Food Card 6 -->
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://source.unsplash.com/400x300/?icecream" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>Ice Cream</h5>
-                    <p>Cold dessert delight</p>
-                    <h6>₹90</h6>
-                    <button class="btn btn-order add-cart" data-name="Ice Cream" data-price="90">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
     </div>
+
+    <!-- Pizza -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1548365328-5c3f2f0a8a4b" />
+            <div class="card-body text-center">
+                <h5>Pizza</h5>
+                <p>Hot pizza</p>
+                <h6>₹250</h6>
+                <button class="btn btn-order add-cart" data-name="Pizza" data-price="250">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pasta -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1521389508051-d7ffb5dc8c16" />
+            <div class="card-body text-center">
+                <h5>Pasta</h5>
+                <p>Creamy pasta</p>
+                <h6>₹180</h6>
+                <button class="btn btn-order add-cart" data-name="Pasta" data-price="180">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+```
+
 </div>
 
-<!-- Cart Box -->
+<!-- Cart -->
+
 <div class="cart-box">
-    <h5>🛒 Cart Summary</h5>
-    <ul id="cart-items" class="list-unstyled small"></ul>
+    <h5>🛒 Cart</h5>
+    <ul id="cart-items"></ul>
     <hr>
-    <strong>Total: ₹<span id="cart-total">0</span></strong>
+    <b>Total: ₹<span id="cart-total">0</span></b>
 </div>
 
-<!-- JavaScript -->
-<script>
-    let cartCount = 0;
-    let totalPrice = 0;
+<!-- Toast -->
 
-    $(".add-cart").click(function() {
+<div id="toast">Item added successfully!</div>
+
+<script>
+    let count = 0;
+    let total = 0;
+
+    $(".add-cart").click(function () {
         let name = $(this).data("name");
         let price = parseInt($(this).data("price"));
 
-        cartCount++;
-        totalPrice += price;
+        count++;
+        total += price;
 
-        $("#cart-count").text(cartCount);
-        $("#total-price").text(totalPrice);
-        $("#cart-total").text(totalPrice);
+        $("#cart-count").text(count);
+        $("#total-price").text(total);
+        $("#cart-total").text(total);
 
         $("#cart-items").append("<li>" + name + " - ₹" + price + "</li>");
+
+        // Toast message
+        $("#toast").fadeIn().delay(1000).fadeOut();
     });
 </script>
 
