@@ -1,21 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>About</title>
-<link href="bootstrap.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie | About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🍔 Foodie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item guest-only"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item guest-only"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item guest-only"><a class="nav-link" id="authLink" href="login.html">Login</a></li>
+                    <li class="nav-item guest-only"><a class="btn btn-light btn-sm text-danger rounded-pill ms-2"
+                            id="registerLink" href="register.html">Register</a></li>
 
-<nav class="navbar navbar-dark bg-danger">
-<div class="container">
-<a href="home.html" class="navbar-brand">Foodie</a>
-</div>
-</nav>
+                    <li class="nav-item user-only d-none"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item user-only d-none"><a class="nav-link" href="cart.html">Cart <span
+                                class="cart-count badge rounded-pill bg-light text-danger">0</span></a></li>
+                    <li class="nav-item user-only d-none"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item user-only d-none"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item user-only d-none"><span class="navbar-text text-white me-2"
+                            id="userNameLabel"></span></li>
+                    <li class="nav-item user-only d-none"><a class="btn btn-light btn-sm text-danger rounded-pill ms-2"
+                            id="logoutLink" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="container mt-5">
-<h2>About Us</h2>
-<p>We provide tasty food with fast delivery.</p>
-</div>
+    <div class="container py-5">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <h2 class="fw-bold mb-3">About Foodie</h2>
+                <p class="lead">Foodie brings comfort food, fast delivery, and a straightforward online experience
+                    together in one place. We believe great meals should be easy to discover, quick to order, and fun to
+                    enjoy.</p>
+                <p>Whether you are planning a family dinner, a late-night snack, or a sweet treat, Foodie makes every
+                    bite just a few clicks away.</p>
+            </div>
+            <div class="col-lg-5">
+                <div class="card p-4">
+                    <h4 class="fw-bold">Why people love us</h4>
+                    <ul class="mb-0">
+                        <li>Fresh, curated dishes</li>
+                        <li>Easy cart and checkout flow</li>
+                        <li>Friendly support and simple registration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
