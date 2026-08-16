@@ -151,3 +151,22 @@ body {
     font-size: 0.8rem;
     margin-left: 0.35rem;
 }
+
+.search-box .input-group-text {
+    background-color: #fff;
+    border-right: 0;
+    padding-left: 1.1rem;
+}
+
+.search-box .form-control {
+    box-shadow: none;
+}
+
+.search-box .form-control:focus {
+    box-shadow: none;
+}
+
+#menuResults {
+    font-size: 0.95rem;
+    font-weight: 500;
+}

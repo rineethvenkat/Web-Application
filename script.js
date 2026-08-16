@@ -296,10 +296,42 @@
         event.target.reset();
     }
 
+    function filterMenuItems() {
+        const searchInput = document.getElementById("menuSearch");
+        const resultsMessage = document.getElementById("menuResults");
+        const menuCards = document.querySelectorAll(".menu-card");
+
+        if (!searchInput || !resultsMessage || !menuCards.length) return;
+
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        menuCards.forEach((card) => {
+            const name = card.dataset.name || "";
+            const matches = !query || name.toLowerCase().includes(query);
+            card.style.display = matches ? "block" : "none";
+            if (matches) visibleCount += 1;
+        });
+
+        if (query && visibleCount === 0) {
+            resultsMessage.textContent = "No dishes match your search. Try another name or ingredient.";
+            resultsMessage.classList.remove("d-none");
+        } else {
+            resultsMessage.textContent = "";
+            resultsMessage.classList.add("d-none");
+        }
+    }
+
     function initApp() {
         loadCart();
         updateAuthLink();
         renderOrderHistory();
+        filterMenuItems();
+
+        const menuSearch = document.getElementById("menuSearch");
+        if (menuSearch) {
+            menuSearch.addEventListener("input", filterMenuItems);
+        }
 
         const loginForm = document.getElementById("loginForm");
         if (loginForm) {

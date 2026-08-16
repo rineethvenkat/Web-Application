@@ -47,8 +47,18 @@
             <p id="cartNotice" class="mt-3"></p>
         </div>
 
-        <div class="row g-4">
-            <div class="col-md-4">
+        <div class="search-box mb-4 mx-auto" style="max-width: 520px;">
+            <div class="input-group input-group-lg shadow-sm rounded-pill overflow-hidden">
+                <span class="input-group-text bg-white border-0 text-danger">🔎</span>
+                <input id="menuSearch" class="form-control border-0" type="search"
+                    placeholder="Search for a dish, meal, or drink..." aria-label="Search menu">
+            </div>
+        </div>
+
+        <div id="menuResults" class="d-none text-center text-muted mb-3"></div>
+
+        <div class="row g-4" id="menuGrid">
+            <div class="col-md-4 menu-card" data-name="Burger">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg" alt="Burger">
                     <div class="card-body text-center">
@@ -63,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Pizza">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg" alt="Pizza">
                     <div class="card-body text-center">
@@ -78,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Biryani">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/7394819/pexels-photo-7394819.jpeg" alt="Biryani">
                     <div class="card-body text-center">
@@ -93,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Cake">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg" alt="Cake">
                     <div class="card-body text-center">
@@ -108,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Ice Cream">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg" alt="Ice Cream">
                     <div class="card-body text-center">
@@ -123,7 +133,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="French Fries">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg" alt="French Fries">
                     <div class="card-body text-center">
@@ -138,7 +148,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Pasta">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg" alt="Pasta">
                     <div class="card-body text-center">
@@ -153,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Sandwich">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg" alt="Sandwich">
                     <div class="card-body text-center">
@@ -168,7 +178,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Donut">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/298217/pexels-photo-298217.jpeg" alt="Donut">
                     <div class="card-body text-center">
@@ -183,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Shawarma">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg" alt="Shawarma">
                     <div class="card-body text-center">
@@ -198,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Wrap">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Wrap">
                     <div class="card-body text-center">
@@ -214,7 +224,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 menu-card" data-name="Mango Smoothie">
                 <div class="card h-100">
                     <img src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg" alt="Mango Smoothie">
                     <div class="card-body text-center">
